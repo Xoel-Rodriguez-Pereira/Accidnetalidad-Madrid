@@ -3,8 +3,9 @@ package org.example.model;
 
 public class Accidente {
 
-    private String cod_distrito, numero, cod_lesividad, coordenada_x_utm, coordenada_y_utm, num_expediente, fecha, hora, localizacion, distrito, rango_edad, sexo, lesividad, tipo_accidente, 
-    tipo_persona, estado_meteorológico, tipo_vehiculo, positiva_alcohol_drogas;
+    private String cod_distrito, numero, cod_lesividad, coordenada_x_utm, coordenada_y_utm, num_expediente, fecha, hora, 
+    localizacion, distrito, rango_edad, sexo, lesividad, tipo_accidente, tipo_persona, estado_meteorológico, tipo_vehiculo, 
+    positiva_alcohol_drogas;
 
 
     public Accidente(
@@ -36,5 +37,17 @@ public class Accidente {
 
     public String getPodsitivoDrogas() {
         return positiva_alcohol_drogas;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public String getTipoAccidente() {
+        return tipo_accidente;
     }
 }

@@ -18,13 +18,22 @@ public class App {
         ProcesarCSV procesador = new ProcesarCSV();
 
         Solucion1 sol1 = new Solucion1();
+        Solucion2 sol2 = new Solucion2();
+        Solucion3 sol3 = new Solucion3();
+        Solucion4 sol4 = new Solucion4();
         
         try {
             List<Accidente> accidentes =  procesador.leerCSV(csv);
             System.out.println("Accidentes totales: "+ accidentes.size());
 
             sol1.mostrarResultado(sol1.accidentesDrogasAlcohol(accidentes));
-            
+            System.out.println("=============================");
+            sol2.mostrarResultado(sol2.accidentesAgrupadosSexo(accidentes)); // dan problemas los casos en los que el nombre de la localidad o calle contiene ";"
+            System.out.println("=============================");
+            sol3.mostrarResultado(sol3.accidentesAgrupadosFecha(accidentes));
+            System.out.println("=============================");
+            sol4.mostrarResultado(sol4.accidentesAtropelloPersonas(accidentes));
+
         } catch (IOException ex) {System.err.println(ex);}
 
     }
