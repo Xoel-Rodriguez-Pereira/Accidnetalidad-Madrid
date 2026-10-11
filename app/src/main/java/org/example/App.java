@@ -14,11 +14,18 @@ public class App {
 
     public static void main(String[] args) {    
 
-        Path csv = Path.of("resources", "2025_Accidentalidad.csv");
+        Path csv = Path.of("src", "main", "resources", "2025_Accidentalidad.csv");      
         ProcesarCSV procesador = new ProcesarCSV();
 
+        Solucion1 sol1 = new Solucion1();
+        
         try {
             List<Accidente> accidentes =  procesador.leerCSV(csv);
+            System.out.println("Accidentes totales: "+ accidentes.size());
+
+            sol1.mostrarResultado(sol1.accidentesDrogasAlcohol(accidentes));
+            
         } catch (IOException ex) {System.err.println(ex);}
+
     }
 }
